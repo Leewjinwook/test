@@ -11,7 +11,7 @@ pipeline {
 
     stage('Checkout Application Git Branch') {
         steps {
-            git credentialsId: '{test}',
+            git credentialsId: 'test',
                 url: 'git@github.com:Leewjinwook/test.git',
                 branch: 'main'
         }
