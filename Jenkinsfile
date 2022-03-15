@@ -4,8 +4,8 @@ pipeline {
     maven 'M3'
   }
   environment {
-    dockerHubRegistry = '{wlsdnrdl77}/{myapp}'
-    dockerHubRegistryCredential = '{bd404a14-4750-426d-aaa0-25866d978901}'
+    dockerHubRegistry = 'wlsdnrdl77/myapp'
+    dockerHubRegistryCredential = 'bd404a14-4750-426d-aaa0-25866d978901'
   }
   stages {
 
