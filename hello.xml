@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+  <file>
+    <title>The first file</title>
+    <name>one.mkv</name>
+    <identifier>
+      <display>My display ID: 1</display>
+      <secret secret="sesame">My secret ID: 123666</secret>
+    </identifier>
+  </file>
+  <file>
+    <title>The second file</title>
+    <name>two.mkv</name>
+    <identifier>
+      <display>My display ID: 3</display>
+      <secret secret="benne">My secret ID: 123666</secret>
+    </identifier>
+  </file>
+  <file>
+    <title>The third file</title>
+    <name>three.mkv</name>
+    <identifier>
+      <display>My display ID: 3</display>
+      <secret secret="goma">My secret ID: 333666 \m/</secret>
+    </identifier>
+  </file>
+</document>
