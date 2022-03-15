@@ -42,7 +42,7 @@ pipeline {
     stage('Docker Image Build') {
         steps {
             sh "cp target/ROOT-1.jar ./"
-            sh "cp deploy/Dockerfile ./"
+            sh "cp /var/lib/jenkins/workspace/test/Dockerfile ./"
             sh "docker build . -t ${dockerHubRegistry}:${currentBuild.number}"
             sh "docker build . -t ${dockerHubRegistry}:latest"
         }
