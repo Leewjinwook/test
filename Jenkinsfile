@@ -4,7 +4,7 @@ pipeline {
     maven 'M3'
   }
   environment {
-    dockerHubRegistry = 'wlsdnrdl77/myapp'
+    dockerHubRegistry = 'wlsdnrdl77/cicd'
     dockerHubRegistryCredential = 'wlsdnrdl77'
   }
   stages {
@@ -58,7 +58,7 @@ pipeline {
 
     stage('Docker Image Push') {
         steps {
-            withDockerRegistry([ credentialsId: dockerHubRegistryCredential, url: "https://index.docker.io/v1/" ]) {
+            withDockerRegistry([ credentialsId: dockerHubRegistryCredential, url: "" ]) {
                                 sh "docker push ${dockerHubRegistry}:${currentBuild.number}"
                                 sh "docker push ${dockerHubRegistry}:latest"
 
