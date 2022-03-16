@@ -81,14 +81,14 @@ pipeline {
 
     stage('K8S Manifest Update') {
         steps {
-            git credentialsId: '{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}',
+            git credentialsId: 'test',
                 url: 'git@github.com:Leewjinwook/cicdtest.git',
                 branch: 'main'
 
             sh "sed -i 's/my-app:.*\$/test:${currentBuild.number}/g' deployment.yaml"
             sh "git add deployment.yaml"
             sh "git commit -m '[UPDATE] test ${currentBuild.number} image versioning'"
-            sshagent(credentials: ['{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}']) {
+            sshagent(credentials: ['k8s-git']) {
                 sh "git remote set-url origin git@github.com:Leewjinwook/cicdtest.git"
                 sh "git push -u origin main"
              }
