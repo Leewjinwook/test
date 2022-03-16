@@ -5,7 +5,7 @@ pipeline {
   }
   environment {
     dockerHubRegistry = 'wlsdnrdl77/myapp'
-    dockerHubRegistryCredential = 'wlsdnrdl77'
+    dockerHubRegistryCredential = 'github'
   }
   stages {
 
