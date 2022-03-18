@@ -81,7 +81,7 @@ pipeline {
 
     stage('K8S Manifest Update') {
         steps {
-            git credentialsId: 'k8s-git',
+            git credentialsId: 'test',
                 url: 'git@github.com:Leewjinwook/cicdtest.git',
                 branch: 'main'
 
