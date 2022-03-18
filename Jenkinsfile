@@ -85,9 +85,9 @@ pipeline {
                 url: 'git@github.com:Leewjinwook/cicdtest.git',
                 branch: 'main'
 
-            sh "sed -i 's/my-app:.*\$/test:${currentBuild.number}/g' deployment.yaml"
+            sh "sed -i 's/my-app:.*\$/my-app:${currentBuild.number}/g' deployment.yaml"
             sh "git add deployment.yaml"
-            sh "git commit -m '[UPDATE] test ${currentBuild.number} image versioning'"
+            sh "git commit -m '[UPDATE] my-app ${currentBuild.number} image versioning'"
             sshagent(credentials: ['k8s-git']) {
                 sh "git remote set-url origin git@github.com:Leewjinwook/cicdtest.git"
                 sh "git push -u origin main"
