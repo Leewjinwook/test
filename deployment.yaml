@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+spec:
+  selector:
+    matchLabels:
+      app: my-app
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      imagePullSecrets:
+        - name: docker-cfg
+      containers:
+        - name: my-app
+          image: wlsdnrdl77/my-app:{Jenkins build number}
+          ports:
+            - containerPort: 8080
